@@ -1,0 +1,39 @@
+
+##insight AI plot_tweet
+
+plot_tweet <- function(data)
+{
+  require(ggplot2)
+  
+  #extract date information
+  data$date <- as.Date(data$createdMsia)
+  
+  #byDay calculate the total frequency for each date
+  byDay <- as.data.frame(table(data$date))
+  
+  #provide colnames date and tweets
+  colnames(byDay) <- c("date", "tweets")
+  
+  byDay$date <-as.Date(byDay$date)
+  
+  #plot the googleVis 
+  #line <- gvisLineChart((byDay),options=list(title="Tweet on tac vs Time"))
+  #line <-plot(line)
+  
+  
+  #plot geom line and point graph
+  
+  c <- ggplot(byDay, aes(x=date, y=tweets, fill=tweets)) #group==1 
+  #c <- c + geom_line() + geom_point() + ggtitle("Tweet versus date")  
+  c <- c + geom_bar(stat= "identity")+ scale_x_date(date_labels = "%b %d")
+  c <- c + theme(legend.position="none")
+#   c <- c + theme(text = element_text(size=14),axis.text.x=element_text(angle=90, hjust=1))   
+  #c + stat_smooth()
+  
+  #plot geom bar graph filled with gradient
+  #c <- ggplot(byDay, aes(x=date, y=tweets ,fill = tweets))    
+  #c <- c + geom_bar(stat="identity") + ggtitle("Tweet versus date")  
+  
+  return(c)  
+  
+}
