@@ -4,6 +4,10 @@ Our social intelligence platform, we help company and brand build awesome custom
 - Assess and analyze user & market trend in real-time 
 - Maximize value capture and react swiftly to user/market activity
 
-Website: https://dataimpacts.shinyapps.io/shinydashboard/ 
+![alt tag](https://raw.githubusercontent.com/LutherTeh/insight.AI/branch/path/to/img.png)
+
+
+
+Application preview: https://dataimpacts.shinyapps.io/shinydashboard/ 
 
 
